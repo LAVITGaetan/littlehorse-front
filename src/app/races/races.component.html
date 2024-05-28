@@ -1,0 +1,11 @@
+<h2>Courses</h2>
+
+<div *ngIf="isLoading">Chargement des données</div>
+<div *ngIf="!isLoading">
+<div class="race-list">
+    <div class="race-card" *ngFor="let race of races">
+        <h3 class="race-name">{{race.Course}} du {{race.Date}}</h3>
+        <a [routerLink]="['/race', race._id]">Voir les détails</a>
+    </div>
+</div>
+</div>

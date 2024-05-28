@@ -1,0 +1,17 @@
+<h1>Historique du cheval : {{horse_name}}</h1>
+<div *ngIf="isLoading">Chargement des données</div>
+<div *ngIf="!isLoading">Nombre de course : {{horse_count}}</div>
+
+
+
+
+<div *ngFor="let horseRace of horse">
+    <p>Course : {{horseRace.Course}}</p>
+    <p>Date : {{horseRace.Date}}</p>
+    <p>Hippodrome : {{horseRace.Hippodrome}}</p>
+    <p>Jockey : {{horseRace.Jockey}}</p>
+    <p>Entraineur : {{horseRace.Entraineur}}</p>
+    <p>Numero : {{horseRace.Numero}}</p>
+    <p>Classement : {{horseRace.Position}}</p>
+
+</div>
