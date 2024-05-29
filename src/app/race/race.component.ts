@@ -29,4 +29,5 @@ export class RaceComponent {
       console.log(this.race);
     });
   }
+
 }

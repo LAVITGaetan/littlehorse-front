@@ -1,17 +1,24 @@
-<h1>Détail de la course</h1>
+<h1 class="title">Détail de la course</h1>
+<h2 class="subtitle">Nom de la course : {{ race.Course }} du {{ race.Date }}</h2>
+<h2 class="subtitle">Vainqueur : {{ race.Gagnant }}</h2>
+<h2 class="subtitle">Hippodrome : {{race.Hippodrome}}</h2>
+<div class="race-list" *ngIf="race">
+    <div class="list-card">
 
-<div *ngIf="race">
-    <h2>Nom de la course : {{ race.Course }} du {{ race.Date }}</h2>
-    <h2>Vainqueur : {{ race.Gagnant }}</h2>
-    <h3>Hippodrome : {{race.Hippodrome}}</h3>
-    <div *ngFor="let participant of race.Participants">
-        <a [routerLink]="['/cheval', participant.Nom]">{{participant.Nom}}</a>
-        <p>Jockey : {{participant.Jockey}}</p>
-        <p>Entraineur : {{participant.Entraineur}}</p>
-        <p>Numero : {{participant.Numero}}</p>
-        <p>Classement : {{participant.Position}}</p>
+<div class="race-list">
+        <div class="race-card" *ngFor="let participant of race.Participants">
+            
+            <p class="race-card-title">Cheval : {{participant.Nom}}</p>
+            <p class="race-card-title">Jockey : {{participant.Jockey}}</p>
+            <p class="race-card-title">Entraineur : {{participant.Entraineur}}</p>
+            <p class="race-card-title">Numero : {{participant.Numero}}</p>
+            <p class="race-card-title">Classement : {{participant.Position}}</p>
+            <p class="race-card-position">{{participant.Position}}</p>
+            <a class="button" [routerLink]="['/cheval', participant.Nom]">Infos du cheval</a>
+        </div>
     </div>
 </div>
+</div>
 <div *ngIf="!race">
-    <p>Chargement des détails de la course...</p>
+    <div class="loading-container"><div class="loading-spinner"></div><span class="loading-text">Chargement des données</span></div>
 </div>

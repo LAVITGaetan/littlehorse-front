@@ -1,0 +1,19 @@
+.list-card {
+    width: 100%;
+}
+
+.race-card-position {
+    top: -24px;
+    right: -24px;
+    height: 48px;
+    width: 48px;
+    border-radius: 48px;
+    position: absolute;
+    background-color: var(--clr-main);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,17 +1,18 @@
-<h1>Historique du cheval : {{horse_name}}</h1>
-<div *ngIf="isLoading">Chargement des données</div>
-<div *ngIf="!isLoading">Nombre de course : {{horse_count}}</div>
+<h1 class="title">Historique du cheval : {{horse_name}}</h1>
+<div class="loading-container" *ngIf="isLoading"><div class="loading-spinner"></div><span class="loading-text">Chargement des données</span></div>
+<div *ngIf="!isLoading" class="subtitle">Nombre de course : {{horse_count}}</div>
 
 
 
 
-<div *ngFor="let horseRace of horse">
-    <p>Course : {{horseRace.Course}}</p>
-    <p>Date : {{horseRace.Date}}</p>
-    <p>Hippodrome : {{horseRace.Hippodrome}}</p>
-    <p>Jockey : {{horseRace.Jockey}}</p>
-    <p>Entraineur : {{horseRace.Entraineur}}</p>
-    <p>Numero : {{horseRace.Numero}}</p>
-    <p>Classement : {{horseRace.Position}}</p>
-
+<div class="horse-list" *ngFor="let horseRace of horse">
+    <div class="horse-card">
+    <p class="race-card-title">Course : {{horseRace.Course}}</p>
+    <p class="race-card-title">Date : {{horseRace.Date}}</p>
+    <p class="race-card-title">Hippodrome : {{horseRace.Hippodrome}}</p>
+    <p class="race-card-title">Jockey : {{horseRace.Jockey}}</p>
+    <p class="race-card-title">Entraineur : {{horseRace.Entraineur}}</p>
+    <p class="race-card-title">Numero : {{horseRace.Numero}}</p>
+    <p class="race-card-title">Classement : {{horseRace.Position}}</p>
+</div>
 </div>

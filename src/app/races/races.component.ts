@@ -9,7 +9,7 @@ export class RacesComponent {
 
   constructor(private http: HttpClient) { }
   api_uri = "https://littlehorse.onrender.com/api/races"
-  races: any;
+  races: any ;
   isLoading: boolean = false
   ngOnInit() {
     this.isLoading = true
